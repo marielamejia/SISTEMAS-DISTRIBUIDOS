@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica seguros</title>
-    <style>
-        .th2{border: 1px solid black; padding: 8px; background-color: #f2f2f2;}
-        .botonAzul{background-color: #3f4f98; color:white; border-color:#3f4f98;}
-        th{border: 1px solid black}
+    <script src="script.js"></script>           <!--vinculamos nuestro js-->
+    <style>             /*como son pocos estilos, lo ponemos en el head de html*/
+        .th2{
+            border: 1px solid black; 
+            padding: 8px; 
+            background-color: #f2f2f2;
+        }
+        .botonAzul{
+            background-color: #3f4f98; 
+            color:white; 
+            border-color:#3f4f98;
+        }
+        th{
+            border: 1px solid black
+        }
+        input{
+            border: none;
+            outline: none;
+        }
+        select{
+            border: none;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -15,6 +34,7 @@
         <h1>Sistema de cotización de seguros de auto</h1>
         <h3>Datos personales</h3>
         <div style="justify-items: center;">
+        <form action="resultado.html" method="GET" id="formularioSeguro">        <!--ponemos el forms para agarrar datos-->
             <!--hacemos tablita de datos personales-->
             <table style="border-collapse: collapse; width:30%; border: 1px solid black;">
                 <tr>
@@ -32,10 +52,9 @@
                 <tr>
                     <th style="text-align: left;" class="th2">Género</th>
                     <th>
-                        <input type="radio" id="masc" value="masc" name="masc"><label for="masc">Masculino</label>
+                        <input type="radio" id="masc" value="masc" name="masc"><label for="masc">Masculino</label></br>
                         <input type="radio" id="fem" value="fem" name="fem"><label for="fem">Femenino</label>
-                    </th>
-                    
+                    </th>         
                 </tr>
                 <tr>
                     <th style="text-align: left;" class="th2">Edad</th>
@@ -43,13 +62,23 @@
                 </tr>
                 <tr>
                     <th style="text-align: left;" class="th2">Estado</th>
-                    
+                    <th>
+                        <select id="estado" name="estado">
+                            <option value="">Selecciona un estado</option>
+                            <option value="cdmx">Ciudad de México</option>
+                            <option value="mex">Estado de México</option>
+                            <option value="jalisco">Jalisco</option>
+                            <option value="chiapas">Chiapas</option>
+                            <option value="puebla">Puebla</option>
+                        </select>
+                    </th>
                 </tr>
                 <tr>
                     <th class="botonAzul" style="border: 1px solid black"><button class="botonAzul">Limpiar</button></th>
                     <th class="botonAzul" style="border: 1px solid black"><button class="botonAzul">Enviar</button></th>
                 </tr>
             </table>
+        </form>
         </div>
     </div>
 </body>
