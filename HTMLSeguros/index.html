@@ -34,7 +34,7 @@
         <h1>Sistema de cotización de seguros de auto</h1>
         <h3>Datos personales</h3>
         <div style="justify-items: center;">
-        <form action="resultado.html" method="GET" id="formularioSeguro">        <!--ponemos el forms para agarrar datos-->
+        <form action="resultadoForms.html" method="GET" id="formularioSeguro">        <!--ponemos el forms para agarrar datos-->
             <!--hacemos tablita de datos personales-->
             <table style="border-collapse: collapse; width:30%; border: 1px solid black;">
                 <tr>
@@ -52,9 +52,12 @@
                 <tr>
                     <th style="text-align: left;" class="th2">Género</th>
                     <th>
-                        <input type="radio" id="masc" value="masc" name="masc"><label for="masc">Masculino</label></br>
-                        <input type="radio" id="fem" value="fem" name="fem"><label for="fem">Femenino</label>
-                    </th>         
+                        <input type="radio" id="masc" value="Masculino" name="genero" style="width:auto;">
+                        <label for="masc">Masculino</label>
+                    </br>
+                        <input type="radio" id="fem" value="Femenino" name="genero" style="width:auto;">
+                        <label for="fem">Femenino</label>
+                    </th>       
                 </tr>
                 <tr>
                     <th style="text-align: left;" class="th2">Edad</th>
@@ -79,6 +82,9 @@
                 </tr>
             </table>
         </form>
+
+
+        
         </div>
     </div>
 </body>
