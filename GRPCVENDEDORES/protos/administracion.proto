@@ -1,0 +1,44 @@
+syntax="proto3";
+package vendedores;
+
+service Servidor{
+    rpc RegistroVendedor (Vendedor) returns (Status){};
+    rpc RegistroTienda (Tienda) returns (Status){};
+    rpc RegistroAsignacion (Asignacion) returns (Status){};
+    rpc listadoTienda (Empty) returns (stream Tienda){};
+    rpc listadoVendedor (Empty) returns (stream Vendedor){};
+    rpc listadoAsignaciones (Empty) returns (stream ListadoAsignaciones){}; //regresa listado de asignacion
+    rpc agregaProducto (stream Producto) returns (Status){};
+    rpc ListadoProductos (Empty) returns (stream Producto){};
+}
+
+message Empty{
+
+}
+message Status{
+    optional bool status=1; 
+}
+message Vendedor{
+    int32 id=1; 
+    string nombre=2; 
+    int32 edad=3; 
+    int32 salario=4; 
+}
+message Tienda{
+    int32 id = 1; 
+    string descripcion = 2; 
+    string alcaldia=3; 
+}
+message Asignacion{
+    int32 idasignacion=1; 
+    int32 idtienda=2; 
+    int32 idvendedor=3; 
+}
+message Producto{
+    int32 id=1;
+    int32 cantidad=2; 
+    string descripcion=3; 
+}
+message ListadoAsignaciones{
+    repeated Asignacion asignaciones=1; 
+}

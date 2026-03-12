@@ -1,0 +1,22 @@
+syntax="proto3";
+package comunicaciones;
+
+service Comunicador{
+    rpc listador1 (Empty) returns (stream Elemento) {}; //aunque no reciba nada debemos ponerle que recibe empty
+    rpc listador2 (Empty) returns(ListadoElementos){};
+    rpc agregador (stream Elemento) returns (Status){};
+}
+
+message Empty{
+
+}
+message Elemento{
+    optional int32 id=1; 
+    optional string descripcion=2; 
+}
+message Status{
+    optional bool status=1; 
+}
+message ListadoElementos{
+    repeated Elemento objetos=1; 
+}

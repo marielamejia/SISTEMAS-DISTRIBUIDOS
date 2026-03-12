@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es"> <!--ponemos nuestro código en español-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica seguros</title>
+    <style>
+        .th2{border: 1px solid black; padding: 8px; background-color: #f2f2f2;}
+        .botonAzul{background-color: #3f4f98; color:white; border-color:#3f4f98;}
+        th{border: 1px solid black}
+    </style>
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h1>Sistema de cotización de seguros de auto</h1>
+        <h3>Datos personales</h3>
+        <div style="justify-items: center;">
+            <!--hacemos tablita de datos personales-->
+            <table style="border-collapse: collapse; width:30%; border: 1px solid black;">
+                <tr>
+                    <th class="th2">Campo</th>
+                    <th class="th2">Valor</th>
+                </tr>
+                <tr>
+                    <th style="text-align: left;" class="th2">Nombre</th>
+                    <th><input type="text" id="nombre" name="nombre"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: left;" class="th2">Apellidos</th>
+                    <th><input type="text" id="apellido" name="apellido"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: left;" class="th2">Género</th>
+                    <th>
+                        <input type="radio" id="masc" value="masc" name="masc"><label for="masc">Masculino</label>
+                        <input type="radio" id="fem" value="fem" name="fem"><label for="fem">Femenino</label>
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <th style="text-align: left;" class="th2">Edad</th>
+                    <th><input type="text" id="edad" name="edad"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: left;" class="th2">Estado</th>
+                    
+                </tr>
+                <tr>
+                    <th class="botonAzul" style="border: 1px solid black"><button class="botonAzul">Limpiar</button></th>
+                    <th class="botonAzul" style="border: 1px solid black"><button class="botonAzul">Enviar</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

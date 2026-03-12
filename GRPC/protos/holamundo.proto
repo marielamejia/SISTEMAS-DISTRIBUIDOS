@@ -1,0 +1,14 @@
+syntax="proto3";
+package holamundo;
+
+service Saludador{
+    rpc diHola (HolaRequest) returns (HolaResponse);
+}
+
+message HolaRequest{
+    string nombre = 1;
+}
+
+message HolaResponse{
+    string message = 1; 
+}
