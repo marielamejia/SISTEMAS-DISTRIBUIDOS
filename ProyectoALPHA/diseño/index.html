@@ -1,0 +1,95 @@
+<!--MARIELA MEJÍA GUTIÉRREZ (201373)  Y ELENA SOFIA LUNA PALACIO (201041)-->
+<!DOCTYPE html>
+<html lang="es">            <!--ponemos nuestra interfaz en español-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Pégale al Monstruo! - Proyecto Alpha</title>
+  <link rel="stylesheet" href="styles.css" />     <!--importamos nuestra clase de estilos-->
+</head>
+<body>
+  <div class="estrellas"></div>         <!--fondo de estrellas-->
+
+  <!--contenedor principal-->
+  <div class="appPrincipal">
+    <!--=======================================================-->
+    <!-- pantalla de login (aqui ponemos el nombre del jugador)-->
+    <!--=======================================================-->
+    <section id="login" class="login-screen">
+      <div class="login-card">
+        <h1>¡Pégale al Monstruo!</h1>
+        <p>Ingresa tu nombre para entrar al juego</p>
+        <!--mini formulario para que el jugador pueda ingresar su nombre-->
+        <form id="loginForm">
+          <input
+            type="text"
+            id="nombreJugador"
+            placeholder="Escribe tu nombre"
+            maxlength="30"              
+            required
+          />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+
+    <!--=======================================================-->
+    <!--===================== Juego ===========================-->
+    <!--=======================================================-->
+    <!--esta parte aparece hasta que el jugador ingrese su nombre (por eso ponemos el hidden)-->
+    <section id="gameScreen" class="game-screen hidden">
+    <!--aqui tenemos nuestra barra superior donde tenemos el nombre del juego-->
+      <header class="top-bar">
+        <div class="menu">☰</div>
+        <div class="title">¡Pégale al Monstruo!</div>
+      </header>
+
+      <!--seccion con un resumen del juego-->
+      <section class="panelInfo">
+        <div class="info-block">
+          <div class="label-strong">Jugador: <span id="nombreJugadorActual">Mariela</span></div>
+
+          <div class="progress-wrap">               <!--barra de progreso del juego-->
+            <div class="energy-icon">✓</div>
+            <div class="progress-bar">
+              <div id="progresoBarra" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hits">                  <!--mostramos cuántos monstruos se han golpeado-->
+          <div class="hit-title">
+            Monstruos golpeados: <strong><span id="contadorHit">0</span> / 5</strong>  <!--iniciamos con 0 hits-->
+          </div>
+
+          <div id="hitChecks" class="checks"></div>                 <!--para marcar con palomitas los hits del jugador-->
+        </div>
+
+        <div class="status-area">                               <!--area para estado de juego y tiempo-->
+          <div>Tiempo: <strong id="timerText">00:00</strong></div>              <!--este va cambiando conforme va pasando-->
+          <div>Estado: <span id="status" class="status-green">Jugando</span></div>
+        </div>
+      </section>
+
+      <!--zona principal de juego-->
+      <main class="main">           
+        <section class="board-card">
+          <div id="gridBoard" class="grid-board"></div>     <!--ponemos nuestro grid para el juego-->
+
+          <div class="button-row">                                              <!--hacemos un div de los botones de control de juego-->
+            <button id="iniciaBtn" class="main-btn">Iniciar partida</button>
+            <button id="salidaBtn" class="secondary-btn">Salir del Juego</button>
+          </div>
+        </section>
+
+        <aside class="score-card">                                  <!--hacemos la columna derecha donde salen los jugadores-->
+          <div class="score-title">Tablero de Jugadores</div>
+          <div id="listaJugadores"></div>
+        </aside>
+      </main>
+    </section>
+  </div>
+
+  <script src="script.js"></script>                     <!--enlazamos nuestro script de funcionalidad-->
+</body>
+</html>
