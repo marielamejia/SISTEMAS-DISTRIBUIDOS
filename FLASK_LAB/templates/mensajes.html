@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practica FLASK MMG</title>
+    </head>
+    <body>
+        <h1>MENSAJES</h1>
+        <!--esta parte es para que se despliegue la información de los mensajes-->
+        <ul>    
+            {% for m in mensajes %}     <!--iteramos sobre todos los mensajes que tenemos-->
+                <li>
+                    <b>{{ m.nombre }}</b>: {{ m.mensaje }}      <!--queremos que imprima ambos campos-->
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/">Volver</a>      <!--para regresar a nuestra vista de enviar mensaje-->
+    </body>
+</html>
